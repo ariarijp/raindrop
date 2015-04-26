@@ -13,7 +13,7 @@ import (
 )
 
 func main() {
-	regions := []string{"nyc3", "ams3", "fra1", "lon1", "sgp1", "sfo1"}
+	regions := []string{"nyc3", "nyc2", "ams3", "ams2", "fra1", "lon1", "sgp1", "sfo1"}
 
 	pat := os.Getenv("DO_PAT")
 	if pat == "" {
