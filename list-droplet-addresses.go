@@ -1,10 +1,10 @@
 package main
 
 import (
-	"fmt"
-	"os"
 	"code.google.com/p/goauth2/oauth"
+	"fmt"
 	"github.com/digitalocean/godo"
+	"os"
 )
 
 func main() {

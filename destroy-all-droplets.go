@@ -1,10 +1,10 @@
 package main
 
 import (
-	"fmt"
-	"os"
 	"code.google.com/p/goauth2/oauth"
+	"fmt"
 	"github.com/digitalocean/godo"
+	"os"
 )
 
 func main() {
@@ -24,7 +24,7 @@ func main() {
 	for _, droplet := range droplets {
 		fmt.Println(droplet.ID)
 		if droplet.Status == "off" {
-			_ , _ = client.Droplets.Delete(droplet.ID)
+			_, _ = client.Droplets.Delete(droplet.ID)
 		}
 	}
 }

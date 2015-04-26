@@ -1,15 +1,15 @@
 package main
 
 import (
+	"code.google.com/p/goauth2/oauth"
 	"fmt"
-	"os"
-	"strconv"
-	"time"
+	"github.com/digitalocean/godo"
 	"io/ioutil"
 	"math/rand"
 	"net/http"
-	"code.google.com/p/goauth2/oauth"
-	"github.com/digitalocean/godo"
+	"os"
+	"strconv"
+	"time"
 )
 
 func main() {
@@ -33,7 +33,7 @@ func main() {
 	var k godo.DropletCreateSSHKey
 	for _, key := range keys {
 		k = godo.DropletCreateSSHKey{
-			ID: key.ID,
+			ID:          key.ID,
 			Fingerprint: key.Fingerprint,
 		}
 	}
@@ -50,13 +50,13 @@ func main() {
 
 		defer resp.Body.Close()
 
-  	byteArray, err := ioutil.ReadAll(resp.Body)
+		byteArray, err := ioutil.ReadAll(resp.Body)
 		if err != nil {
 			fmt.Printf("Something bad happened: %s\n\n", err)
 			return
 		}
 
-  	name := string(byteArray)
+		name := string(byteArray)
 
 		rand.Seed(time.Now().UnixNano())
 
